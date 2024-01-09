@@ -28,4 +28,6 @@ public class PizzaController {
         // Restituisco il template
         return "/pizzas/list";
     }
+
+
 }
