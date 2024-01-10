@@ -52,4 +52,10 @@ public class PizzaController {
         model.addAttribute("pizza", pizza);
         return "pizzas/create";
     }
+
+    @GetMapping("/create")
+    public String store(Pizza formPizza) {
+        Pizza savedPizza = pizzaRepository.save(formPizza);
+        return "redirect:/pizzas/show" + savedPizza.getId();
+    }
 }
