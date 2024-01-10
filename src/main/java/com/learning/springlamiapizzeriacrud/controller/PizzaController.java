@@ -44,4 +44,12 @@ public class PizzaController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pizza " + id + " not found");
         }
     }
+
+    // Metodo che mi restituisce la view /create
+    @GetMapping("/create")
+    public String create(Model model){
+        Pizza pizza = new Pizza();
+        model.addAttribute("pizza", pizza);
+        return "pizzas/create";
+    }
 }

@@ -20,6 +20,7 @@ public class Pizza {
     @Column(nullable = false)
     private String description;
 
+    @Lob
     private String imgUrl;
 
 
