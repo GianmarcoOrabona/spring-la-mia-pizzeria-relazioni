@@ -1,6 +1,9 @@
 package com.learning.springlamiapizzeriacrud.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 import java.math.BigDecimal;
 
@@ -14,10 +17,14 @@ public class Pizza {
     private Integer id;
 
     @Column(nullable = false)
+    @Size(min = 5, max = 50)
+    @NotEmpty(message = "Name must not be empty!")
     private String name;
 
     @Lob
     @Column(nullable = false)
+    @Size(min = 10, max = 200)
+    @NotEmpty(message = "Description must not be empty!")
     private String description;
 
     @Lob
@@ -25,6 +32,7 @@ public class Pizza {
 
 
     @Column(nullable = false)
+    @DecimalMin(value = "1.00", message = "Price can't be lower than 1.00")
     private BigDecimal price;
 
     // METODI

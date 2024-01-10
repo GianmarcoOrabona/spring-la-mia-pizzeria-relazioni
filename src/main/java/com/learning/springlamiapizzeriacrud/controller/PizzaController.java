@@ -2,10 +2,12 @@ package com.learning.springlamiapizzeriacrud.controller;
 
 import com.learning.springlamiapizzeriacrud.model.Pizza;
 import com.learning.springlamiapizzeriacrud.repository.PizzaRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -52,8 +54,15 @@ public class PizzaController {
     }
 
     @PostMapping("/create")
-    public String store(@ModelAttribute("pizza") Pizza formPizza) {
-        Pizza savedPizza = pizzaRepository.save(formPizza);
-        return "redirect:/pizzas/show/" + savedPizza.getId();
+    public String store(@Valid @ModelAttribute("pizza") Pizza formPizza, BindingResult bindingResult) {
+        // Valido i dati di Pizza
+        if (bindingResult.hasErrors()) {
+            // Se ci sono errori, ricarico il template del form senza cancellare i dati inseriti
+            return "pizzas/create";
+        } else {
+            // Altrimenti crea la pizza e mostra la view /show con la pizza appena creata
+            Pizza savedPizza = pizzaRepository.save(formPizza);
+            return "redirect:/pizzas/show/" + savedPizza.getId();
+        }
     }
 }
