@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/resources :: head('Edit pizza')"></head>
+<body>
+    <div class="container">
+        <h1 th:text="|Edit ${pizza.name}|"></h1>
+    </div>
+
+    <th:block th:replace="fragments/resources :: script"></th:block>
+</body>
+</html>

@@ -65,4 +65,23 @@ public class PizzaController {
             return "redirect:/pizzas/show/" + savedPizza.getId();
         }
     }
+
+    // Metodo che mi restituisce la view con il form per modificare i dati
+    @GetMapping("/edit/{id}")
+    public String edit(@PathVariable Integer id, Model model) {
+        // Recupero la pizza dal DB
+        Optional<Pizza> result = pizzaRepository.findById(id);
+
+        // Verifico se è presente
+        if (result.isPresent()) {
+
+            // Lo passo come attributo del model
+            model.addAttribute("pizza", result.get());
+
+            // Ritorno il template con il form di modifica
+            return "pizzas/edit";
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pizza with id " + id + " not found");
+        }
+    }
 }

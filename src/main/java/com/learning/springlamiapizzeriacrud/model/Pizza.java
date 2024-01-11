@@ -23,7 +23,8 @@ public class Pizza {
 
     @Lob
     @Column(nullable = false)
-    @Size(min = 10, max = 200)
+    @Size(min = 10, max = 200
+    )
     @NotEmpty(message = "Description must not be empty!")
     private String description;
 
