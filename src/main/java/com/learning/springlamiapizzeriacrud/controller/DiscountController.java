@@ -4,14 +4,13 @@ import com.learning.springlamiapizzeriacrud.model.Discount;
 import com.learning.springlamiapizzeriacrud.model.Pizza;
 import com.learning.springlamiapizzeriacrud.repository.DiscountRepository;
 import com.learning.springlamiapizzeriacrud.repository.PizzaRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
@@ -59,7 +58,7 @@ public class DiscountController {
     }
 
     @PostMapping("/create")
-    public String store(Discount formDiscount) {
+    public String store(@Valid @ModelAttribute("discount") Discount formDiscount, BindingResult bindingResult) {
         Discount storedDiscount = discountRepository.save(formDiscount);
         return "redirect:/pizzas/show/" + storedDiscount.getPizza().getId();
     }
