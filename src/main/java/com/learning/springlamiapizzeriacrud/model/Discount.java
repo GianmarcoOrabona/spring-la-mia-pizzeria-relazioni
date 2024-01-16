@@ -16,7 +16,7 @@ public class Discount {
     @Column(nullable = false)
     private LocalDate startDate;
 
-    private LocalDate endDate;
+    private LocalDate expireDate;
 
     private String title;
 
@@ -41,12 +41,12 @@ public class Discount {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
-        return endDate;
+    public LocalDate getExpireDate() {
+        return expireDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
+    public void setExpireDate(LocalDate expireDate) {
+        this.expireDate = expireDate;
     }
 
     public String getTitle() {

@@ -3,17 +3,48 @@
 <head th:replace="fragments/resources :: head('Pizza details')"></head>
 <body>
     <h1 class="text-center mt-3">Pizza Details</h1>
-<div class="container text-center d-flex justify-content-center">
-    <div class="card mt-5" style="width: 18rem;">
-        <img th:src="${pizza.imgUrl}" class="card-img-top" alt="pizza">
-        <div class="card-body text-start">
-            <h5 class="card-title" th:text="${pizza.name}"></h5>
-            <p class="card-text" th:text="${pizza.description}"></p>
-            <p class="card-text" th:text="|Price: ${pizza.price} &euro;|"></p>
-            <a th:href="@{/pizzas}" class="btn btn-primary">Back to pizzas</a>
-        </div>
+
+<main>
+    <div class="container text-center d-flex justify-content-around">
+        <section>
+            <div class="card mt-5" style="width: 18rem;">
+                <img th:src="${pizza.imgUrl}" class="card-img-top" alt="pizza">
+                <div class="card-body text-start">
+                    <h5 class="card-title" th:text="${pizza.name}"></h5>
+                    <p class="card-text" th:text="${pizza.description}"></p>
+                    <p class="card-text" th:text="|Price: ${pizza.price} &euro;|"></p>
+                    <a th:href="@{/pizzas}" class="btn btn-primary">Back to pizzas</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-5">
+            <h3>
+                <span>Discount</span>
+                <a th:href="@{/discounts/create(pizzaId=${pizza.id})}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i></a>
+            </h3>
+            <table class="table" th:if="${pizza.discounts.size() > 0}">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Start Date</th>
+                    <th>Expire Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="discount : ${pizza.discounts}">
+                    <td th:text="${discount.title}"></td>
+                    <td th:text="${discount.startDate}"></td>
+                    <td th:text="${discount.expireDate}"></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="alert alert-info" th:if="${pizza.discounts.size() == 0}">
+                This pizza has no discounts
+            </div>
+        </section>
     </div>
-</div>
+</main>
 
 <th:block th:replace="fragments/resources :: script"></th:block>
 </body>
