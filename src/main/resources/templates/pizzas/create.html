@@ -2,6 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/resources :: head('Create pizza')"></head>
 <body>
+<header>
+    <nav th:replace="fragments/navbar :: topNavbar('create')"></nav>
+</header>
     <div class="container">
         <h1>Fill the form to create a new pizza</h1>
 

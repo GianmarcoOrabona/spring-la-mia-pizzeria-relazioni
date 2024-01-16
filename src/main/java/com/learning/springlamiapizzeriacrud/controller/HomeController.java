@@ -10,6 +10,7 @@ public class HomeController {
 
     @GetMapping
     public String home() {
-        return "redirect:/pizzas";
+        return "home/landing-page";
+        /*return "redirect:/pizzas";*/
     }
 }
