@@ -24,11 +24,19 @@ public class PizzaController {
 
     // Metodo che mi mostra tutte le pizze
     @GetMapping
-    public String index(Model model) {
-        List<Pizza> pizzaList = pizzaRepository.findAll();
+    public String index(@RequestParam(name = "keyword", required = false) String searchKeyword, Model model) {
+        List<Pizza> pizzaList;
+        if (searchKeyword != null) {
+           pizzaList = pizzaRepository.findByNameContaining(searchKeyword);
+        } else {
+            pizzaList = pizzaRepository.findAll();
+        }
 
         // Aggiungo la lista di pizze al model
         model.addAttribute("pizzaList", pizzaList);
+
+        // Precarico il valore dell'input
+        model.addAttribute("preloadSearch", searchKeyword);
 
         // Restituisco il template
         return "pizzas/list";
