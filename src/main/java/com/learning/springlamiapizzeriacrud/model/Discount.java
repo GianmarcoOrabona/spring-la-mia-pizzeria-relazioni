@@ -2,6 +2,8 @@ package com.learning.springlamiapizzeriacrud.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 
 import java.time.LocalDate;
 
@@ -15,6 +17,8 @@ public class Discount {
     private Integer id;
 
     @Column(nullable = false)
+    @NotNull
+    @PastOrPresent
     private LocalDate startDate;
 
     private LocalDate expireDate;

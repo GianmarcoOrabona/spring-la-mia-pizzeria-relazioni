@@ -29,6 +29,7 @@
                     <th>Title</th>
                     <th>Start Date</th>
                     <th>Expire Date</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -36,6 +37,9 @@
                     <td th:text="${discount.title}"></td>
                     <td th:text="${discount.startDate}"></td>
                     <td th:text="${discount.expireDate}"></td>
+                    <td>
+                        <a class="btn btn-primary" th:href="@{/discounts/edit/{id}(id=${discount.id})}"><i class="fa-solid fa-pencil"></i></a>
+                    </td>
                 </tr>
                 </tbody>
             </table>

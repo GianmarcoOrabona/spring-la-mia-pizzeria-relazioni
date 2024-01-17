@@ -58,12 +58,56 @@ public class DiscountController {
     }
 
     @PostMapping("/create")
-    public String store(@Valid @ModelAttribute("discount") Discount formDiscount, BindingResult bindingResult) {
+    public String store(@Valid @ModelAttribute("discount") Discount formDiscount, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
+            model.addAttribute("pizza", formDiscount.getPizza());
             return "discounts/create";
         } else {
             Discount savedDiscount = discountRepository.save(formDiscount);
             return "redirect:/pizzas/show/" + savedDiscount.getPizza().getId();
         }
     }
+
+    // Metodo per il form di modifica
+    @GetMapping("/edit/{id}")
+    public String edit(@PathVariable Integer id, Model model) {
+        // Recupero il Discount con quell'ID
+        Optional<Discount> result = discountRepository.findById(id);
+
+        // Se è presente precarico il font con il Discount
+        if (result.isPresent()) {
+            Discount updatedDiscount = result.get();
+            model.addAttribute("discount", updatedDiscount);
+            return "discounts/edit";
+        } else {
+            // Altrimenti sollevo un'eccezione HTTP 404
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Discount with id " + id + " not found");
+        }
+    }
+
+    @PostMapping("/edit/{id}")
+    public String update(@PathVariable Integer id, @Valid @ModelAttribute("discount") Discount formDiscount, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "discounts/edit";
+        }
+        Discount updateDiscount = discountRepository.save(formDiscount);
+        return "redirect:/pizzas/show/" + updateDiscount.getPizza().getId();
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
