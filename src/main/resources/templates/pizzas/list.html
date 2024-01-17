@@ -23,7 +23,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="pizza : ${pizzaList}">
+        <tr th:each="pizza : ${pizzaList}" th:classAppend="${pizza.activeDiscounts() ? 'table-success': 'table-danger'}">
             <th scope="row" th:text="${pizza.id}"></th>
             <td th:text="${pizza.name}"></td>
             <td th:text="${pizza.description}"></td>

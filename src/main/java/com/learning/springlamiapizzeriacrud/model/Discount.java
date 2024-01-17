@@ -73,4 +73,11 @@ public class Discount {
 
     // METODI CUSTOM
 
+    public Boolean isExpireDateBeforeStartDate() {
+        return expireDate.isBefore(startDate);
+    }
+
+    public Boolean isDiscountActive() {
+        return (LocalDate.now().isBefore(expireDate) && LocalDate.now().isAfter(startDate)) || (LocalDate.now().isBefore(expireDate));
+    }
 }
