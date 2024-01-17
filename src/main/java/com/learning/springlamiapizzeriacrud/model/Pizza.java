@@ -39,7 +39,7 @@ public class Pizza {
     @NotNull(message = "Price must not be empty")
     private BigDecimal price;
 
-    @OneToMany(mappedBy = "pizza")
+    @OneToMany(mappedBy = "pizza", orphanRemoval = true)
     private List<Discount> discounts;
 
     // METODI

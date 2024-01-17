@@ -70,4 +70,7 @@ public class Discount {
     public void setPizza(Pizza pizza) {
         this.pizza = pizza;
     }
+
+    // METODI CUSTOM
+
 }

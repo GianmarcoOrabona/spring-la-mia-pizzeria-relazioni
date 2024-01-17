@@ -93,6 +93,19 @@ public class DiscountController {
         Discount updateDiscount = discountRepository.save(formDiscount);
         return "redirect:/pizzas/show/" + updateDiscount.getPizza().getId();
     }
+
+    // Metodo per eliminare l'offerta
+    @PostMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id) {
+        Optional<Discount> result = discountRepository.findById(id);
+        if (result.isPresent()) {
+            Discount discountToDelete = result.get();
+            discountRepository.delete(discountToDelete);
+            return "redirect:/pizzas/show/" + discountToDelete.getPizza().getId();
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Discount with id " + id + " not found");
+        }
+    }
 }
 
 

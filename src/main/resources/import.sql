@@ -1,22 +1,22 @@
-INSERT INTO pizzas (price, img_url, name, description) VALUES (8.50, 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Pizza%2C_Bystrica%2C_Slovakia.jpg/800px-Pizza%2C_Bystrica%2C_Slovakia.jpg', 'Margherita', 'Pomodoro, Mozzarella, Basilico');
-INSERT INTO pizzas (price, img_url, name, description) VALUES (9.75, 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Neapolitan_pizza_Margherita_at_Pizzeria_Brandi%2C_Naples.jpg/800px-Neapolitan_pizza_Margherita_at_Pizzeria_Brandi%2C_Naples.jpg', 'Napoletana', 'Pomodoro, Mozzarella di Bufala, Acciughe, Olive, Origano');
-INSERT INTO pizzas (price, img_url, name, description) VALUES (10.00, 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pizza-4_formaggi.jpg/800px-Pizza-4_formaggi.jpg', 'Quattro Stagioni', 'Pomodoro, Mozzarella, Funghi, Carciofi, Prosciutto Cotto, Olive Nere');
-INSERT INTO pizzas (price, img_url, name, description) VALUES (9.25, 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Pizza_marinara%2C_tradizionale_di_Napoli.jpg/800px-Pizza_marinara%2C_tradizionale_di_Napoli.jpg', 'Marinara', 'Pomodoro, Aglio, Origano, Olive, Acciughe');
-INSERT INTO pizzas (price, img_url, name, description) VALUES (11.50, 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Capricciosa_pizza_%284271703032%29.jpg/800px-Capricciosa_pizza_%284271703032%29.jpg', 'Capricciosa', 'Pomodoro, Mozzarella, Prosciutto Cotto, Funghi, Carciofi, Olive');
-INSERT INTO pizzas (price, img_url, name, description) VALUES (10.75, 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Pizza_with_Pesto%2C_Tomatoes%2C_Olives%2C_and_Feta.jpg/800px-Pizza_with_Pesto%2C_Tomatoes%2C_Olives%2C_and_Feta.jpg', 'Pesto', 'Pesto Genovese, Mozzarella, Pomodorini, Pinoli, Parmigiano');
-INSERT INTO pizzas (price, img_url, name, description) VALUES (11.25, 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Quattro_formaggi%2C_Pizza_Lucania.jpg/800px-Quattro_formaggi%2C_Pizza_Lucania.jpg', 'Quattro Formaggi', 'Gorgonzola, Fontina, Mozzarella, Parmigiano');
-INSERT INTO pizzas (price, img_url, name, description) VALUES (10.50, 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Calzone_-_pizzacraft_2x_DSC07689%2C_Debonair%2C_double_cheese%2C_lardons%2C_sausage%2C_ricotta%2C_sweet_onions.jpg/800px-Calzone_-_pizzacraft_2x_DSC07689%2C_Debroniar%2C_double_cheese%2C_lardons%2C_sausage%2C_ricotta%2C_sweet_onions.jpg', 'Calzone', 'Pomodoro, Mozzarella, Prosciutto Cotto, Funghi, Ricotta');
-INSERT INTO pizzas (price, img_url, name, description) VALUES (9.00, 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Aubergine_pizza.jpg/800px-Aubergine_pizza.jpg', 'Melanzane', 'Pomodoro, Mozzarella, Melanzane Grigliate, Parmigiano, Basilico');
-INSERT INTO pizzas (price, img_url, name, description) VALUES (12.00, 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Pizza_Fruttidemare.jpg/800px-Pizza_Fruttidemare.jpg', 'Italiana', 'Pomodoro, Mozzarella, Salame Piccante, Peperoni, Olive Nere');
+INSERT INTO pizzas (price, img_url, name, description) VALUES (8.50, 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGl6emElMjBtYXJnaGVyaXRhfGVufDB8fDB8fHww', 'Margherita', 'Pomodoro, Mozzarella, Basilico');
+INSERT INTO pizzas (price, img_url, name, description) VALUES (9.75, 'https://it.wikipedia.org/wiki/Pizza_alla_marinara#/media/File:Pizza_marinara.jpg', 'Napoletana', 'Pomodoro, Mozzarella di Bufala, Acciughe, Olive, Origano');
+INSERT INTO pizzas (price, img_url, name, description) VALUES (10.00, 'https://i0.wp.com/www.piccolericette.net/piccolericette/wp-content/uploads/2016/07/3017_Pizza.jpg?resize=895%2C616&ssl=1', 'Quattro Stagioni', 'Pomodoro, Mozzarella, Funghi, Carciofi, Prosciutto Cotto, Olive Nere');
+INSERT INTO pizzas (price, img_url, name, description) VALUES (9.25, 'https://it.wikipedia.org/wiki/Pizza_alla_marinara#/media/File:Pizza_marinara.jpg', 'Marinara', 'Pomodoro, Aglio, Origano, Olive, Acciughe');
+INSERT INTO pizzas (price, img_url, name, description) VALUES (11.50, 'https://www.buttalapasta.it/wp-content/uploads/2017/11/pizza-capricciosa.jpg', 'Capricciosa', 'Pomodoro, Mozzarella, Prosciutto Cotto, Funghi, Carciofi, Olive');
+INSERT INTO pizzas (price, img_url, name, description) VALUES (10.75, 'https://thealmondeater.com/wp-content/uploads/2021/03/Kale-Pesto-Pizza-1-6-min.jpg', 'Pesto', 'Pesto Genovese, Mozzarella, Pomodorini, Pinoli, Parmigiano');
+INSERT INTO pizzas (price, img_url, name, description) VALUES (11.25, 'https://blog.giallozafferano.it/zeroglutine/wp-content/uploads/2020/04/IMG_5544-720x411.jpg', 'Quattro Formaggi', 'Gorgonzola, Fontina, Mozzarella, Parmigiano');
+INSERT INTO pizzas (price, img_url, name, description) VALUES (10.50, 'https://i2.wp.com/www.piccolericette.net/piccolericette/wp-content/uploads/2020/09/4460_Calzoni.jpg?resize=895%2C616&ssl=1', 'Calzone', 'Pomodoro, Mozzarella, Prosciutto Cotto, Funghi, Ricotta');
+INSERT INTO pizzas (price, img_url, name, description) VALUES (9.00, 'https://staticcookist.akamaized.net/wp-content/uploads/sites/21/2020/05/pizza-con-melanzane-1200x675.jpg', 'Melanzane', 'Pomodoro, Mozzarella, Melanzane Grigliate, Parmigiano, Basilico');
+INSERT INTO pizzas (price, img_url, name, description) VALUES (12.00, 'https://www.acouplecooks.com/wp-content/uploads/2018/09/Diavola-Pizza-0014.jpg', 'Italiana', 'Pomodoro, Mozzarella, Salame Piccante, Peperoni, Olive Nere');
 
 -- Insert Discount
-INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2024-05-29', 1, '2023-09-02', '10% Discount');
+INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2028-05-29', 1, '2023-09-02', '10% Discount');
 INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2024-08-15', 2, '2023-10-18', '15% Off Special');
 INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2024-06-30', 3, '2023-11-05', '20% Discount Deal');
 INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2024-09-22', 4, '2024-01-12', '12% Off Combo');
-INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2024-07-10', 5, '2023-12-03', '25% Pizza Fest');
+INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2023-10-15', 5, '2023-10-10', '25% Pizza Fest');
 INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2024-08-25', 6, '2023-09-22', '18% Off Extravaganza');
 INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2024-06-15', 7, '2023-11-28', 'Free Topping Tuesday');
 INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2024-09-05', 8, '2024-01-02', 'Buy 1 Get 1 Free');
-INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2024-07-20', 9, '2023-10-10', '30% Mega Discount');
-INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2024-10-10', 10, '2024-02-15', 'Special Weekend Offer');
+INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2024-12-20', 9, '2023-10-10', '30% Mega Discount');
+INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2023-10-15', 10, '2023-10-10', 'Special Weekend Offer');
