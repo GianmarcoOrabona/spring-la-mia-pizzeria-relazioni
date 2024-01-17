@@ -59,7 +59,11 @@ public class DiscountController {
 
     @PostMapping("/create")
     public String store(@Valid @ModelAttribute("discount") Discount formDiscount, BindingResult bindingResult) {
-        Discount storedDiscount = discountRepository.save(formDiscount);
-        return "redirect:/pizzas/show/" + storedDiscount.getPizza().getId();
+        if (bindingResult.hasErrors()) {
+            return "discounts/create";
+        } else {
+            Discount savedDiscount = discountRepository.save(formDiscount);
+            return "redirect:/pizzas/show/" + savedDiscount.getPizza().getId();
+        }
     }
 }

@@ -19,6 +19,7 @@ public class Discount {
 
     private LocalDate expireDate;
 
+    @NotEmpty(message = "Title must not be blank")
     private String title;
 
     @ManyToOne
