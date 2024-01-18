@@ -1,6 +1,7 @@
 package com.learning.springlamiapizzeriacrud.controller;
 
 import com.learning.springlamiapizzeriacrud.model.Pizza;
+import com.learning.springlamiapizzeriacrud.repository.IngredientRepository;
 import com.learning.springlamiapizzeriacrud.repository.PizzaRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,15 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/pizzas")
 public class PizzaController {
-    // Aggiungo il repository come attributo e lo annoto come @Autowired
+    // Aggiungo le repository come attributo e le annoto come @Autowired
+
+    // Repository Pizza
     @Autowired
     private PizzaRepository pizzaRepository;
+
+    // Repository Ingredient
+    @Autowired
+    private IngredientRepository ingredientRepository;
 
     // Metodo che mi mostra tutte le pizze
     @GetMapping
