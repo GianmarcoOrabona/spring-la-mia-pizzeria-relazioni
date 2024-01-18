@@ -20,3 +20,20 @@ INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2024-0
 INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2024-09-05', 8, '2024-01-02', 'Buy 1 Get 1 Free');
 INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2024-12-20', 9, '2023-10-10', '30% Mega Discount');
 INSERT INTO discounts (expire_date, pizza_id, start_date, title) VALUES ('2023-10-15', 10, '2023-10-10', 'Special Weekend Offer');
+
+-- Insert Ingredients
+INSERT INTO ingredients (name) VALUES ('Sugo');
+INSERT INTO ingredients (name) VALUES ('Mozzarella');
+INSERT INTO ingredients (name) VALUES ('Basilico');
+INSERT INTO ingredients (name) VALUES ('Salame');
+INSERT INTO ingredients (name) VALUES ('Prosciutto cotto');
+INSERT INTO ingredients (name) VALUES ('Prosciutto crudo');
+INSERT INTO ingredients (name) VALUES ('Salsiccia');
+INSERT INTO ingredients (name) VALUES ('Provola');
+INSERT INTO ingredients (name) VALUES ('Funghi');
+INSERT INTO ingredients (name) VALUES ('Mortadella');
+INSERT INTO ingredients (name) VALUES ('Pesto');
+INSERT INTO ingredients (name) VALUES ('Pesto di pistacchio');
+INSERT INTO ingredients (name) VALUES ('Olive nere');
+INSERT INTO ingredients (name) VALUES ('Carciofi');
+INSERT INTO ingredients (name) VALUES ('Pomodorini');

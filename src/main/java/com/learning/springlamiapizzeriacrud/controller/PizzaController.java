@@ -49,6 +49,7 @@ public class PizzaController {
         return "pizzas/list";
     }
 
+    // Metodo show che mi mostra la singola pizza e le relative offerte e ingredienti
     @GetMapping("/show/{id}")
     public String show(@PathVariable Integer id, Model model) {
         Optional<Pizza> result = pizzaRepository.findById(id);
