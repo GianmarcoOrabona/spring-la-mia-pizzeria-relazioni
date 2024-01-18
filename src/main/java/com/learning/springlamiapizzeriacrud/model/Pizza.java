@@ -39,8 +39,13 @@ public class Pizza {
     @NotNull(message = "Price must not be empty")
     private BigDecimal price;
 
+    // Attributo che rappresenta le offerte (Relazione Uno A Molti)
     @OneToMany(mappedBy = "pizza", orphanRemoval = true)
     private List<Discount> discounts;
+
+    // Attributo che rappresenta gli ingredienti (Relazione Molti A Molti)
+    @ManyToMany
+    private List<Ingredient> ingredients;
 
     // METODI
 
@@ -90,6 +95,14 @@ public class Pizza {
 
     public void setDiscounts(List<Discount> discounts) {
         this.discounts = discounts;
+    }
+
+    public List<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<Ingredient> ingredients) {
+        this.ingredients = ingredients;
     }
 
     // METODI CUSTOM
