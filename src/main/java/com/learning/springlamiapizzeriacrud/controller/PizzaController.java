@@ -103,6 +103,9 @@ public class PizzaController {
             // Lo passo come attributo del model
             model.addAttribute("pizza", result.get());
 
+            // Passo la lista degli Ingredient al model
+            model.addAttribute("ingredientList", ingredientRepository.findAll());
+
             // Ritorno il template con il form di modifica
             return "pizzas/edit";
         } else {
