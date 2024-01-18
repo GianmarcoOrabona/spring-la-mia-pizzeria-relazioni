@@ -67,6 +67,9 @@ public class PizzaController {
     public String create(Model model){
         Pizza pizza = new Pizza();
         model.addAttribute("pizza", pizza);
+
+        // Passo tramite Model, la lista degli ingredienti
+        model.addAttribute("ingredientList", ingredientRepository.findAll());
         return "pizzas/create";
     }
 
