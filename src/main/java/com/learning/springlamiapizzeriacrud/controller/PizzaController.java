@@ -74,10 +74,14 @@ public class PizzaController {
     }
 
     @PostMapping("/create")
-    public String store(@Valid @ModelAttribute("pizza") Pizza formPizza, BindingResult bindingResult) {
+    public String store(@Valid @ModelAttribute("pizza") Pizza formPizza, BindingResult bindingResult, Model model) {
         // Valido i dati di Pizza
         if (bindingResult.hasErrors()) {
             // Se ci sono errori, ricarico il template del form senza cancellare i dati inseriti
+
+            // Passo tramite Model la lista di tutti gli Ingredient disponibili
+            model.addAttribute("ingredientList", ingredientRepository.findAll());
+
             return "pizzas/create";
         } else {
             // Altrimenti crea la pizza e mostra la view /show con la pizza appena creata

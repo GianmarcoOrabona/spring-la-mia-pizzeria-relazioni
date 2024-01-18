@@ -9,7 +9,10 @@
     <div class="container">
         <h1>Fill the form to create a new pizza</h1>
 
+        <!-- Form per la creazione di una nuova Pizza -->
         <form id="create-pizza" th:object="${pizza}" th:action="@{/pizzas/create}" method="post" class="row g-3">
+
+            <!-- Campi per le informazioni della Pizza -->
             <div class="col-8">
                 <div class="col-md-6">
                     <label for="name" class="form-label">Name</label>
@@ -42,6 +45,7 @@
                 </div>
             </div>
 
+            <!-- Ingredienti -->
             <div class="col-4">
                 <h3>Choose your favorite ingredients</h3>
 
@@ -56,6 +60,8 @@
                     <label class="form-check-label" th:for="|ing-${ing.id}|" th:text="${ing.name}"></label>
                 </div>
             </div>
+
+            <!-- Bottoni del form -->
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Save</button>
                 <a class="btn btn-danger" th:href="@{/pizzas}">Cancel</a>
