@@ -114,11 +114,12 @@ public class PizzaController {
     }
 
     @PostMapping("/edit/{id}")
-    public String update(@PathVariable Integer id, @Valid @ModelAttribute("pizza") Pizza formPizza, BindingResult bindingResult) {
+    public String update(@PathVariable Integer id, @Valid @ModelAttribute("pizza") Pizza formPizza, BindingResult bindingResult, Model model) {
         Optional<Pizza> result = pizzaRepository.findById(id);
         if (result.isPresent()) {
             Pizza pizzaToEdit = result.get();
             if (bindingResult.hasErrors()) {
+                model.addAttribute("ingredientList", ingredientRepository.findAll());
                 return "pizzas/edit";
             }
 
