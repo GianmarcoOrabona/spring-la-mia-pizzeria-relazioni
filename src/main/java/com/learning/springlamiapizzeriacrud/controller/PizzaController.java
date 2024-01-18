@@ -1,5 +1,6 @@
 package com.learning.springlamiapizzeriacrud.controller;
 
+import com.learning.springlamiapizzeriacrud.model.Ingredient;
 import com.learning.springlamiapizzeriacrud.model.Pizza;
 import com.learning.springlamiapizzeriacrud.repository.IngredientRepository;
 import com.learning.springlamiapizzeriacrud.repository.PizzaRepository;
