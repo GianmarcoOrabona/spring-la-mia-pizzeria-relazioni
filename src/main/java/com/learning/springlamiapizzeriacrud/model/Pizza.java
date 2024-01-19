@@ -5,6 +5,8 @@ import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -44,7 +46,8 @@ public class Pizza {
     private List<Discount> discounts;
 
     // Attributo che rappresenta gli ingredienti (Relazione Molti A Molti)
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Ingredient> ingredients;
 
     // METODI
